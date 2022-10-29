@@ -7,25 +7,25 @@ const quizData = [
         d: 'none of the above',
         correct: 'd'
     }, {
-        question: 'Jaga, ipsum dolor sit amet consectetur adipisicing elit',
-        a: 'bhf',
-        b: '17',
-        c: 'ff',
-        d: '120',
-        correct: 'c' 
+        question: 'What is the most used language in 2019?',
+        a: 'Rust',
+        b: 'swift',
+        c: 'Python',
+        d: 'Javascript',
+        correct: 'd' 
     }, {
-        question: 'vof, ipsum dolor sit amet consectetur adipisicing elit',
-        a: 'hvac',
-        b: '17',
-        c: 'nnoooadi',
-        d: 'ica',
-        correct: 'c'
+        question: 'Who is the 46th president of the US?',
+        a: 'Obama',
+        b: 'Biden',
+        c: 'Trudeau',
+        d: 'Trump',
+        correct: 'b'
     }, {
-        question: 'ufhs, sjf dolor sit amet consectetur adipuzgi0',
-        b: '17',
-        c: 'baba',
-        d: 'vafa',
-        correct: 'c'
+        question: 'What does HTML stand for?',
+        b: 'Hypertext Markup Language',
+        c: 'Hydro Tango Mango Lingo',
+        d: 'Hit Them More Likely',
+        correct: 'a'
     }
 ]
 
@@ -87,13 +87,20 @@ submitBtn.addEventListener("click", () => {
         if (answer === quizData[currentQuiz].correct) {
             score++;
         }
+        // console.log(score);
 
         currentQuiz++;
         if (currentQuiz < quizData.length) {
             loadQuiz();
         } else {
-            quiz.innerHTML = `<h2>You answered correctly ${score}/${quizData.length} questions.</h2>`;
+            quiz.innerHTML = `
+                <h2>You answered correctly ${score}/${quizData.length} questions.</h2>
+
+                <button onClick="location.reload()
+                ">Reload Quiz</button>
+            `;
         }
     }
 });
+
 
